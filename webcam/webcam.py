@@ -14,25 +14,30 @@ import numpy as np
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0, cv2.CAP_AVFOUNDATION)
 
-# Load a sample picture and learn how to recognize it.
+# Load sample pictures and learn how to recognize them.
 Nathan_image = face_recognition.load_image_file("Nathan.jpg")
 Nathan_face_encoding = face_recognition.face_encodings(Nathan_image)[0]
 
-# Load a second sample picture and learn how to recognize it.
 Jesse_image = face_recognition.load_image_file("Jesse.jpg")
 Jesse_face_encoding = face_recognition.face_encodings(Jesse_image)[0]
+
+dynamique_image = face_recognition.load_image_file("Dynamique.jpeg")
+dynamique_face_encoding = face_recognition.face_encodings(dynamique_image, model="small")[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     Nathan_face_encoding,
-    Jesse_face_encoding
+    Jesse_face_encoding,
+    dynamique_face_encoding
 ]
 known_face_names = [
     "Nathan",
-    "Jesse"
+    "Jesse",
+    "Dynamique"
 ]
 
 process_this_frame = True
+DISTANCE_THRESHOLD = 0.6
 
 while True:
     # Grab a single frame of video
