@@ -24,6 +24,9 @@ Jesse_face_encoding = face_recognition.face_encodings(Jesse_image)[0]
 dynamique_image = face_recognition.load_image_file("Dynamique.jpeg")
 dynamique_face_encoding = face_recognition.face_encodings(dynamique_image, model="small")[0]
 
+dynamique_image = face_recognition.load_image_file("Dynamique.jpeg")
+dynamique_face_encoding = face_recognition.face_encodings(dynamique_image, model="small")[0]
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     Nathan_face_encoding,
