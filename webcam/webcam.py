@@ -30,21 +30,23 @@ dynamique_face_encoding = face_recognition.face_encodings(dynamique_image, model
 jean_image = face_recognition.load_image_file("jean.png")
 jean_face_encoding = face_recognition.face_encodings(jean_image, model="small")[0]
 
-jean_image = face_recognition.load_image_file("Josh.jpeg")
-jean_face_encoding = face_recognition.face_encodings(jean_image, model="small")[0]
+josh_image = face_recognition.load_image_file("Josh.jpeg")
+josh_face_encoding = face_recognition.face_encodings(josh_image, model="small")[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     Nathan_face_encoding,
     Jesse_face_encoding,
     dynamique_face_encoding,
-    jean_face_encoding
+    jean_face_encoding,
+    josh_face_encoding
 ]
 known_face_names = [
     "Nathan",
     "Jesse",
     "Dynamique",
-    "Jean"
+    "Jean",
+    "Josh"
 ]
 
 process_this_frame = True
